@@ -25,6 +25,10 @@ public abstract class Employee {
         this.salary = salary;
     }
 
+    public UUID getId() {
+        return id;
+    }
+
     public String getGroupName() {
         return assignedWorkGroup.getGroupName();
     }

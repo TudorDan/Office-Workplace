@@ -23,4 +23,8 @@ public class WorkGroup {
     public void addMember(Employee employee) {
         members.add(employee);
     }
+
+    public List<Employee> getMembers() {
+        return members;
+    }
 }
