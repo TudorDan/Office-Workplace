@@ -42,4 +42,17 @@ public class OfficeWorkplace {
     public List<Employee> getEmployeeList() {
         return employeeList;
     }
+
+    public Employee getEmployeeByName(String name) {
+        for (Employee employee : employeeList) {
+            if (employee.getName().equals(name)) {
+                return employee;
+            }
+        }
+        return null;
+    }
+
+    public List<WorkGroup> getWorkGroupList() {
+        return workGroupList;
+    }
 }

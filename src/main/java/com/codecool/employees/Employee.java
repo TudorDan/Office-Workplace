@@ -1,5 +1,6 @@
 package com.codecool.employees;
 
+import com.codecool.OfficeWorkplace;
 import com.codecool.utilities.EmployeeType;
 
 import java.math.BigDecimal;
@@ -11,7 +12,6 @@ public abstract class Employee {
     private final String name;
     private BigDecimal salary;
     protected boolean isAssignedToWorkGroup;
-    private WorkGroup assignedWorkGroup;
 
     public Employee(String name) {
         this.id = UUID.randomUUID();
@@ -27,19 +27,32 @@ public abstract class Employee {
         this.salary = salary;
     }
 
+    public void setAssignedToWorkGroup(boolean assignedToWorkGroup) {
+        isAssignedToWorkGroup = assignedToWorkGroup;
+    }
+
     public UUID getId() {
         return id;
     }
 
-    public String getGroupName() {
+    public String getWorkGroupName() {
         if (isAssignedToWorkGroup) {
-            return assignedWorkGroup.getGroupName();
+            return "Employee " + name + " workgroup is: "
+                    + OfficeWorkplace.getInstance().getWorkGroupByEmployee(id).getGroupName();
         } else {
-            return "Not assigned to a Work Group.";
+            return "Employee " + name + " is not assigned to a Work Group.";
         }
     }
 
+    public String getName() {
+        return name;
+    }
+
     public void printSalary() {
-        System.out.println("Employee " + id + " " + employeeType + " " + name + " has a salary of: " + salary + "$.");
+        System.out.println("Employee " + id + " " + employeeType + " " + name + " has a salary of: " + salary + " $.");
+    }
+
+    public void printGroup() {
+        System.out.println(getWorkGroupName());
     }
 }

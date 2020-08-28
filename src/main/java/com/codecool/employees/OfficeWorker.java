@@ -19,9 +19,11 @@ public class OfficeWorker extends Employee {
             case JUNIOR:
                 salary = BigDecimal.valueOf(1250);
                 setSalary(salary);
+                break;
             case SENIOR:
                 salary = BigDecimal.valueOf(1700);
                 setSalary(salary);
+                break;
         }
     }
 }
