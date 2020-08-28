@@ -10,11 +10,13 @@ public abstract class Employee {
     private EmployeeType employeeType;
     private final String name;
     private BigDecimal salary;
+    protected boolean isAssignedToWorkGroup;
     private WorkGroup assignedWorkGroup;
 
     public Employee(String name) {
         this.id = UUID.randomUUID();
         this.name = name;
+        this.isAssignedToWorkGroup = false;
     }
 
     public void setEmployeeType(EmployeeType employeeType) {
@@ -30,10 +32,14 @@ public abstract class Employee {
     }
 
     public String getGroupName() {
-        return assignedWorkGroup.getGroupName();
+        if (isAssignedToWorkGroup) {
+            return assignedWorkGroup.getGroupName();
+        } else {
+            return "Not assigned to a Work Group.";
+        }
     }
 
     public void printSalary() {
-        System.out.println("Employee " + id + " " + employeeType + " " + name + " has a salary of: " + salary + " $.");
+        System.out.println("Employee " + id + " " + employeeType + " " + name + " has a salary of: " + salary + "$.");
     }
 }
