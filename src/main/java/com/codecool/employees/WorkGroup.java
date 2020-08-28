@@ -15,6 +15,7 @@ public class WorkGroup {
         this.assignedLeader = assignedLeader;
         this.groupType = groupType;
         this.groupName = groupName;
+
         members.add(assignedLeader);
         assignedLeader.setAssignedToWorkGroup(true);
     }
@@ -33,6 +34,7 @@ public class WorkGroup {
     }
 
     public int getMembersNr() {
-        return members.size();
+        // we don't count the group leader
+        return members.size() - 1;
     }
 }

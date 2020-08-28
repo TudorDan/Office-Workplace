@@ -48,6 +48,10 @@ public abstract class Employee {
         return name;
     }
 
+    public EmployeeType getEmployeeType() {
+        return employeeType;
+    }
+
     public void printSalary() {
         System.out.println("Employee " + id + " " + employeeType + " " + name + " has a salary of: " + salary + " $.");
     }

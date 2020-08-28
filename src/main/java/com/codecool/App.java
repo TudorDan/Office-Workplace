@@ -1,6 +1,7 @@
 package com.codecool;
 
 import com.codecool.employees.*;
+import com.codecool.utilities.EmployeeType;
 import com.codecool.utilities.ExperienceLevel;
 import com.codecool.utilities.GroupType;
 
@@ -47,6 +48,14 @@ public class App {
         workplace.addWorkGroup(workGroupA);
         workplace.addWorkGroup(workGroupB);
         System.out.println("workgroups set!");
+        System.out.println("Raise groupLeads salaries for newly created groups");
+        for (Employee employee : workplace.getEmployeeList()) {
+            if (employee.getEmployeeType() == EmployeeType.GROUPLEAD) {
+                GroupLead groupLead = (GroupLead) employee;
+                groupLead.raiseSalary();
+            }
+        }
+        System.out.println("salaries raised.");
 
         System.out.println("Current Employees: ");
         for (Employee employee : workplace.getEmployeeList()) {

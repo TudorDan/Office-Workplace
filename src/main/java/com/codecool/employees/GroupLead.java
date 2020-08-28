@@ -11,17 +11,19 @@ public class GroupLead extends Employee {
         super(name);
         setEmployeeType(EmployeeType.GROUPLEAD);
 
-        BigDecimal salary;
-        if (isAssignedToWorkGroup) {
-            salary = BigDecimal.valueOf(1800 + (getGroupEmployeesNr() * 200));
-        } else {
-            salary = BigDecimal.valueOf(1800);
-        }
+        BigDecimal salary = BigDecimal.valueOf(1800);
         setSalary(salary);
     }
 
     public int getGroupEmployeesNr() {
         WorkGroup workGroup = OfficeWorkplace.getInstance().getWorkGroupByEmployee(id);
         return workGroup.getMembersNr();
+    }
+
+    public void raiseSalary() {
+        if (isAssignedToWorkGroup) {
+            BigDecimal salary = BigDecimal.valueOf(1800 + (getGroupEmployeesNr() * 200));
+            setSalary(salary);
+        }
     }
 }
