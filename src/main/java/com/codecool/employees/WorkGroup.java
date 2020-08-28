@@ -27,4 +27,8 @@ public class WorkGroup {
     public List<Employee> getMembers() {
         return members;
     }
+
+    public int getMembersNr() {
+        return members.size();
+    }
 }

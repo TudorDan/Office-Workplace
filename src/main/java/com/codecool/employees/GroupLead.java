@@ -1,5 +1,6 @@
 package com.codecool.employees;
 
+import com.codecool.OfficeWorkplace;
 import com.codecool.utilities.EmployeeType;
 
 import java.math.BigDecimal;
@@ -16,6 +17,7 @@ public class GroupLead extends Employee {
     }
 
     public int getGroupEmployeesNr() {
-        return 0;
+        WorkGroup workGroup = OfficeWorkplace.getInstance().getWorkGroupByEmployee(id);
+        return workGroup.getMembersNr();
     }
 }

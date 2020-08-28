@@ -38,4 +38,8 @@ public class OfficeWorkplace {
         }
         return null;
     }
+
+    public List<Employee> getEmployeeList() {
+        return employeeList;
+    }
 }

@@ -6,7 +6,7 @@ import java.math.BigDecimal;
 import java.util.UUID;
 
 public abstract class Employee {
-    private final UUID id;
+    protected final UUID id;
     private EmployeeType employeeType;
     private final String name;
     private BigDecimal salary;
