@@ -10,6 +10,7 @@ public abstract class Employee {
     private EmployeeType employeeType;
     private final String name;
     private BigDecimal salary;
+    private WorkGroup assignedWorkGroup;
 
     public Employee(String name) {
         this.id = UUID.randomUUID();
@@ -25,7 +26,7 @@ public abstract class Employee {
     }
 
     public String getGroupName() {
-        return null;
+        return assignedWorkGroup.getGroupName();
     }
 
     public void printSalary() {

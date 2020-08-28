@@ -1,6 +1,6 @@
 package com.codecool.utilities;
 
-public enum GroupDivision {
+public enum GroupType {
     SALES,
     OFFICE
 }
